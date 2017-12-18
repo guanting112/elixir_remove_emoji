@@ -1,5 +1,11 @@
-RemoveEmoji
-------
+Remove Emoji
+=================================================
+
+[![Build Status](https://travis-ci.org/guanting112/elixir_remove_emoji.svg?branch=master)](https://travis-ci.org/guanting112/elixir_remove_emoji)
+
+此為針對「移除」Unicode Emoji 圖示 所開發的專屬套件，
+您可以透過該套件移除令人困擾的 Emoji 符號。
+( It can remove any of the emoji supported by that package. )
 
 ```elixir
 
@@ -12,16 +18,15 @@ IO.puts sanitized_string == expect_string
 
 ```
 
-Installation
+Installation / 安裝方式
 ------
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `remove_emoji` to your list of dependencies in `mix.exs`:
+請在您的 Elixir 專案裡的 mix.exs 加入以下指令，然後執行 mix deps.get 更新依賴即可。
 
 ```elixir
 def deps do
   [
-    {:remove_emoji, "~> 0.1.0"}
+    {:remove_emoji, "~> 1.0.0"}
   ]
 end
 ```
@@ -35,4 +40,4 @@ Demo ( Before / After )
 LICENSE
 --------
 
-MIT ( see LICENSE.txt )
+MIT LICENSE
