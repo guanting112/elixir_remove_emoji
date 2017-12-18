@@ -30,3 +30,9 @@ Demo ( Before / After )
 ------
 
 ![emoji_effect](https://i.imgur.com/OzcQYWL.jpg)
+
+
+LICENSE
+--------
+
+MIT ( see LICENSE.txt )
