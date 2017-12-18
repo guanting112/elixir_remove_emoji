@@ -13,7 +13,7 @@ defmodule RemoveEmojiTest do
 
   doctest RemoveEmoji
 
-  test "必須清除以下常見的 emoji 符號" do
+  test "step 1" do
     original_string = """
 ...‼⁉™↔↕↖↗↘↙↩↪⌚⌛⌨⏏⏩⏪⏫⏬⏭⏮⏯⏰⏱⏲
 ⏳⏸⏹⏺Ⓜ▪▫▶◀◻◼◽◾☀☁☂☃☄☎☑☔☕☘☝☠☢☣☦☪☮☯☸
@@ -58,7 +58,7 @@ defmodule RemoveEmojiTest do
     assert sanitized_string == expect_string
   end
 
-  test "必須清除以下常見的 emoji 國旗" do
+  test "step 2" do
     original_string = """
 ...
 🇦🇺🇨🇦🇨🇭🇨🇳🇩🇪🇪🇸🇫🇷🇬🇧🇮🇱🇮🇹
@@ -76,7 +76,7 @@ defmodule RemoveEmojiTest do
     assert sanitized_string == expect_string
   end
 
-  test "必須清除以下隨機挑選的 apple emoji" do
+  test "step 3" do
     original_string = """
 ...
 🚗🚓🚨🚲🚡🚅🛶💺🚏🏦🕋🏦📱⌚️🖲🕯🔮🎎🎐💌📦
@@ -94,7 +94,7 @@ defmodule RemoveEmojiTest do
     assert sanitized_string == expect_string
   end
 
-  test "必須清除以下 fitzpatrick modifiers " do
+  test "step 4" do
     original_string = ".👦👦🏻👦🏼👦🏽👦🏾👦🏿👧👧🏻👧🏼👧🏽👧🏾👧🏿👨👨🏻👨🏼👨🏽👨🏾👨🏿👩👩🏻👩🏼👩🏽👩🏾👩🏿."
 
     expect_string = ".."
@@ -103,7 +103,7 @@ defmodule RemoveEmojiTest do
     assert sanitized_string == expect_string
   end
 
-  test "電話、愛心、星星等 emoji 需要移除掉" do
+  test "step 5" do
     original_string = """
 ...
 ㊗★☎☏♡♥♣♧☻☺♠♤▪▫
@@ -117,7 +117,7 @@ defmodule RemoveEmojiTest do
   end
 
 
-  test "不能過濾掉以下常用的特殊符號跟文字，因為程式處理宗旨是移除「emoji」" do
+  test "step 6" do
     original_string = """
 ~!@{}$%^&()_+=.'"~ \ | /?>><<:;#*
 œ∑´†¥¨ˆøπ“‘«åß∂ƒ˙∆˚¬…æΩ≈ç√∫˜µ≤≥÷
