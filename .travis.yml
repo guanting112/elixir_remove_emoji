@@ -2,9 +2,12 @@ language: elixir
 sudo: required
 dist: trusty
 
-install:
-  - sudo locale-gen zh_TW.UTF-8 en_US.UTF-8
-
 elixir:
   - '1.4'
   - '1.5'
+
+install:
+  - sudo locale-gen zh_TW.UTF-8 en_US.UTF-8
+  - mix local.rebar --force 
+  - mix local.hex --force
+  - mix deps.get
