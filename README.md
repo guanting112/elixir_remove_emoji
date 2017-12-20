@@ -3,18 +3,16 @@ Remove Emoji
 
 [![Build Status](https://travis-ci.org/guanting112/elixir_remove_emoji.svg?branch=master)](https://travis-ci.org/guanting112/elixir_remove_emoji)
 
-此為針對「移除」Unicode Emoji 圖示 所開發的專屬套件，
+It can remove any of the emoji. 💻🔥🤯🚫
 您可以透過該套件移除令人困擾的 Emoji 符號。
-( It can remove any of the emoji supported by that package. )
 
 ```elixir
 
-original_string = ".👦👦🏻👦🏼👦🏽👦🏾👦🏿👧👧🏻👧🏼👧🏽👧🏾👧🏿👨👨🏻👨🏼👨🏽👨🏾👨🏿👩👩🏻👩🏼👩🏽👩🏾👩🏿."
-
-expect_string = ".."
+original_string = "👦👦🏻🇯🇵🇰🇳🇰🇷👦🏼👦🏽👦🏾😄😅😆😇😈😉😊"
 sanitized_string = original_string |> RemoveEmoji.sanitize()
 
-IO.puts sanitized_string == expect_string
+# true, :ok
+IO.puts "" === sanitized_string
 
 ```
 
@@ -40,4 +38,4 @@ Demo ( Before / After )
 LICENSE
 --------
 
-MIT LICENSE
+MIT LICENSE ( See LICENSE.txt )
