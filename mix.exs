@@ -5,7 +5,7 @@ defmodule RemoveEmoji.Mixfile do
     [
       app: :remove_emoji,
       name: "RemoveEmoji",
-      version: "1.0.0",
+      version: "1.0.1",
       elixir: "~> 1.4",
       start_permanent: Mix.env == :prod,
       description: description(),
