@@ -1,7 +1,16 @@
 defmodule RemoveEmoji do
   alias RemoveEmoji.Rules
 
-  def sanitize(value) do
-    Rules.emoji_codepoints |> Regex.replace(value, "")
+  @doc """
+  Sanitize original string, remove emoji symbol.
+  
+  ## Examples
+
+      iex> "👦👦🏻🇯🇵😇😈" |> RemoveEmoji.sanitize()
+      ""
+
+  """
+  def sanitize(original_string) do
+    Rules.emoji_codepoints |> Regex.replace(original_string, "")
   end
 end
