@@ -1,4 +1,9 @@
 language: elixir
+matrix:
+  include:
+    - elixir: 1.10
+      otp_release: 22.0
+
 sudo: required
 dist: trusty
 
