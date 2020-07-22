@@ -116,6 +116,17 @@ defmodule RemoveEmojiTest do
     assert sanitized_string == expect_string
   end
 
+  test "should handle number emojis" do
+    original_string = """
+...
+0️⃣ 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ 🔟 #️⃣ *️⃣ ©️ ®️
+...
+"""
+    expect_string = "......"
+    sanitized_string = original_string |> sanitize |> String.replace(~r/\s+/, " ") |> String.trim
+
+    assert sanitized_string == expect_string
+  end
 
   test "should keep normal text" do
     original_string = """
